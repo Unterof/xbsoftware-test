@@ -16,20 +16,26 @@ const limits = {
 
 }
 
-//add value check !!!
 
-function changeHandle(event) {
-   
- isDrag = true
- if (valueOfTop.value > limits.bottom){
-    valueOfTop
- }
-item.style.top = valueOfTop.value + 'px'
-item.style.left = valueOfLeft.value + 'px'
+
+function changeHandle() {
+
+    isDrag = true
+    if (valueOfTop.value > limits.bottom) {
+        valueOfTop.value = limits.bottom
+    } else if (valueOfTop.value < limits.top) {
+        valueOfTop.value = '0'
+    } else if (valueOfLeft.value > limits.right) {
+        valueOfLeft.value = limits.right
+    } else if (valueOfLeft.value < limits.left) {
+        valueOfLeft.value = '0'
     }
-    
-    
-   
+    item.style.top = valueOfTop.value + 'px'
+    item.style.left = valueOfLeft.value + 'px'
+}
+
+
+
 
 item.onmousedown = function (event) {
     isDrag = true
@@ -60,7 +66,7 @@ item.onmousedown = function (event) {
         valueOfLeft.value = item.getBoundingClientRect().left
         if (isDrag) {
             move(positionX, positionY)
-       
+
         }
 
     }
