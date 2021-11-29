@@ -1,0 +1,41 @@
+1)Hi Support Team, 
+I'm using your gantt widget and not sure, can it be used with NodeJs or not.
+If it possible please show me some example?
+
+
+Hi User 1. 
+Of course, you can use it with NodeJS. Tap on this link Describes in more detail the mechanism of interaction with NodeJS
+
+https://docs.dhtmlx.com/gantt/desktop__howtostart_nodejs.html
+
+2)
+Hi Support Team,
+My code doesn't work
+gantt.addTask({
+id:10,
+text:"Task #5"
+start_date:"02-09-2013",
+duration:28
+}, "project_2");
+can you help me?
+
+
+ Hi , User 2
+You missed comma , after key in object - “text : “Task #5”,”
+For more information reed : https://docs.dhtmlx.com/gantt/api__gantt_addtask.html
+
+3) 
+Hi Support,
+I'm using code like next
+ 
+gantt.init("gantt_here");
+gantt.load("data.php");
+gantt.showQuickInfo(123);
+ 
+where 123 is the ID of one of task in the dataset. Data is shown on the chart, but the quick info dialog is not shown, can you help me ?
+
+Hi User 3
+At first this method is defined in the Quick Info extension, so you need to activate the quick_info plugin.
+
+Pay attention to the second line of your code, where you called .load method . You need to use  types 'json', 'xml', 'oldxml' . 
+Read more : https://docs.dhtmlx.com/gantt/api__gantt_load.html
